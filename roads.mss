@@ -2,65 +2,6 @@
 //                    ROAD & RAIL LINES
 // ==================================================================
 
-// At lower zoomlevels, just show major automobile routes: motorways
-// and trunks.
-
-#roads_low[zoom>=5][zoom<=8] {
-  line-color: @motorway-trunk-fill;
-
-  [type='motorway'][bicycle='yes'],
-  [type='trunk'][bicycle!='no']{
-    line-color: @motorway-trunk-cycle-fill;
-  }
-
-  [type='railway'] {
-    line-color: @rail-line;
-  }
-
-  line-width: 0.3;
-  [zoom >= 6] {
-    line-width: 0.4;
-  }
-  [zoom >= 7] {
-    line-width: 0.6;
-  }
-  [zoom >= 8] {
-    line-width: 0.8;
-  }
-}
-
-// At mid-level scales start to show primary and secondary routes
-// as well.
-
-#roads_med[zoom >= 9] {
-  line-color: @motorway-trunk-fill;
-
-  [type='motorway'][can_bicycle='yes'],
-  [type='trunk'][can_bicycle!='no'] {
-    line-color: @motorway-trunk-cycle-fill;
-  }
-  [type='primary'] {
-    line-color: @primary-case;
-  }
-  [type='secondary'] {
-    line-color: @standard-case;
-  }
-
-  [type='railway'] {
-    line-color: @rail-line;
-  }
-
-  line-width: 1;
-  [type='secondary']
-  {
-    line-width: 0.6;
-
-    [zoom >= 10] {
-      line-width: 1;
-    }
-  }
-}
-
 // At higher levels the roads become more complex. We're now showing
 //more than just automobile routes - railways, footways, and cycleways
 //come in as well.
@@ -96,8 +37,8 @@
 @rdz11_living_street: 0;
 @rdz11_service: 0;
 @rdz11_pedestrian: 0;
-@rdz11_track: 0.25;
-@rdz11_path: 0.30;
+@rdz11_track: 0.75;
+@rdz11_path: 0.50;
 @rdz11_cycle: 0.5;
 @rdz11_railway: 0.5;
 // Border width (one side of the road only)
@@ -130,9 +71,9 @@
 @rdz12_residential: 0.5;
 @rdz12_living_street: 0.5;
 @rdz12_service: 0;
-@rdz12_track: 0.5;
+@rdz12_track: 2;
 @rdz12_pedestrian: 0.5;
-@rdz12_path: 0.5;
+@rdz12_path: 1.5;
 @rdz12_cycle: 0.8;
 @rdz12_railway: 0.5;
 // Border width (one side of the road only)
@@ -165,10 +106,10 @@
 @rdz13_residential: 1;
 @rdz13_living_street: 0.6;
 @rdz13_service: 1;
-@rdz13_track: 1;
+@rdz13_track: 3;
 @rdz13_pedestrian: 0.6;
 @rdz13_bridleway: 0.20;
-@rdz13_path: 0.65;
+@rdz13_path: 2;
 @rdz13_footway: 0.20;
 @rdz13_steps: 0.3;
 @rdz13_cycle: 1;
@@ -204,10 +145,10 @@
 @rdz14_residential: 1;
 @rdz14_living_street: 1;
 @rdz14_service: 1;
-@rdz14_track: 1;
+@rdz14_track: 2.5;
 @rdz14_pedestrian: 1;
 @rdz14_bridleway: 0.25;
-@rdz14_path: 1;
+@rdz14_path: 2;
 @rdz14_footway: 0.25;
 @rdz14_steps: 0.5;
 @rdz14_cycle: 2;
@@ -245,10 +186,10 @@
 @rdz15_residential: 2;
 @rdz15_living_street: 1.5;
 @rdz15_service: 2;
-@rdz15_track: 2;
+@rdz15_track: 3;
 @rdz15_pedestrian: 1;
 @rdz15_bridleway: 0.5;
-@rdz15_path: 1.25;
+@rdz15_path: 2.5;
 @rdz15_footway: 0.5;
 @rdz15_steps: 0.8;
 @rdz15_cycle: 2;
