@@ -349,7 +349,7 @@ Layer:
           AND (covered IS NULL OR covered = 'no')
           AND (tags->'indoor' IS NULL OR tags->'indoor' = 'no')
           -- Tim's condition
-          AND ((surface IN ('finegravel', 'gravel', 'pebblestone', 'compacted', 'dirt', 'unpaved', 'concrete:lanes')) OR (tracktype in ('grade2')))
+          AND ((surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'dirt', 'unpaved', 'concrete:lanes')) OR (tracktype in ('grade2')))
         ORDER BY z_order
       ) AS data
   geometry: linestring
