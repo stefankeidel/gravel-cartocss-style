@@ -889,8 +889,8 @@ Layer:
             way_area/NULLIF(!pixel_width!::real*!pixel_height!::real,0) AS way_pixels
           FROM planet_osm_polygon
           WHERE
-            tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_si
-                           'bureau_de_change', 'casino', 'library')
+            tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site')
+            OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point')
             OR tags->'compressed_air'='yes'
             OR tags->'car_wash'='yes'
             OR (amenity='motorcycle_parking' AND (bicycle='yes' OR bicycle='designated'))
