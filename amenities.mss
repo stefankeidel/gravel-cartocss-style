@@ -83,9 +83,9 @@
     }
   }
 
-  [feature = 'tourism_alpine_hut'][zoom >= 13],
-  [feature = 'tourism_wilderness_hut'][zoom >= 13],
-  [feature = 'amenity_shelter'][zoom >= 16] {
+  [feature = 'tourism_alpine_hut'][zoom >= 10],
+  [feature = 'tourism_wilderness_hut'][zoom >= 10],
+  [feature = 'amenity_shelter'][zoom >= 10] {
     marker-file: url('symbols/osm-bright-gl-style/amenities/shelter_11.svg');
     marker-fill: @accommodation-icon;
     [feature = 'amenity_shelter'] {
@@ -95,8 +95,8 @@
     marker-clip: false;
   }
 
-  [feature = 'highway_bus_stop'][shelter = 'yes'][zoom >= 17],
-  [feature = 'highway_bus_stop'][covered = 'yes'][zoom >= 17] {
+  [feature = 'highway_bus_stop'][shelter = 'yes'][zoom >= 15],
+  [feature = 'highway_bus_stop'][covered = 'yes'][zoom >= 15] {
     marker-file: url('symbols/osm-bright-gl-style/amenities/shelter_11.svg');
     marker-fill: @man-made-icon;
     marker-placement: interior;
@@ -117,7 +117,7 @@
     marker-placement: interior;
   }
 
-  [feature = 'tourism_camp_site'][zoom >= 14] {
+  [feature = 'tourism_camp_site'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/tourism/camping.svg');
     marker-fill: @accommodation-icon;
     marker-placement: interior;
@@ -130,7 +130,7 @@
     marker-clip: false;
   }
 
-  [feature = 'tourism_caravan_site'][zoom >= 14] {
+  [feature = 'tourism_caravan_site'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/tourism/caravan_park.svg');
     marker-placement: interior;
     marker-clip: false;
