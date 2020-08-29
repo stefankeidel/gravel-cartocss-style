@@ -676,6 +676,13 @@
     marker-file: url('symbols/openstreetmap-carto/shop/supermarket.svg');
   }
 
+  [feature = 'amenity_fuel'][zoom >= 10] {
+    marker-placement: interior;
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('symbols/amenity/fuel.svg');
+  }
+
   [feature = 'amenity_bar'][zoom >= 17],
   [feature = 'amenity_biergarten'][zoom >= 17],
   [feature = 'amenity_cafe'][zoom >= 17],

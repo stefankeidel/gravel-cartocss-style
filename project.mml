@@ -544,7 +544,7 @@ Layer:
           name,
           COALESCE( -- order is important here
             'tourism_' || CASE WHEN tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site') THEN tourism ELSE NULL END,
-            'amenity_' || CASE WHEN amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point') THEN amenity ELSE NULL END,
+            'amenity_' || CASE WHEN amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel') THEN amenity ELSE NULL END,
             'shop_' || CASE WHEN tags->'service:bicycle:retail'='yes' OR tags->'service:bicycle:repair'='yes' OR tags->'service:bicycle:rental'='yes' OR tags->'service:bicycle:pump'='yes' OR tags->'service:bicycle:diy'='yes' THEN 'bicycle' ELSE CASE WHEN shop IN ('bicycle', 'bakery', 'beverage', 'convenience', 'convenience;gas', 'greengrocer', 'supermarket', 'pastry', 'sports') THEN shop ELSE NULL END END,
             'emergency_' || CASE WHEN tags->'emergency' IS NOT NULL then tags->'emergency' ELSE NULL END,
             'healthcare_' || CASE WHEN tags->'healthcare' IN ('clinic', 'hospital') THEN tags->'healthcare' ELSE NULL END,
@@ -602,7 +602,7 @@ Layer:
         FROM planet_osm_polygon
         WHERE
           tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site')
-          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point')
+          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel')
           OR tags->'compressed_air'='yes'
           OR tags->'car_wash'='yes'
           OR (amenity='motorcycle_parking' AND (bicycle='yes' OR bicycle='designated'))
@@ -670,7 +670,7 @@ Layer:
           name,
           COALESCE( -- order is important here
             'tourism_' || CASE WHEN tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site') THEN tourism ELSE NULL END,
-            'amenity_' || CASE WHEN amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point') THEN amenity ELSE NULL END,
+            'amenity_' || CASE WHEN amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel') THEN amenity ELSE NULL END,
             'shop_' || CASE WHEN tags->'service:bicycle:retail'='yes' OR tags->'service:bicycle:repair'='yes' OR tags->'service:bicycle:rental'='yes' OR tags->'service:bicycle:pump'='yes' OR tags->'service:bicycle:diy'='yes' THEN 'bicycle' ELSE CASE WHEN shop IN ('bicycle', 'bakery', 'beverage', 'convenience', 'convenience;gas', 'greengrocer', 'supermarket', 'pastry', 'sports') THEN shop ELSE NULL END END,
             'emergency_' || CASE WHEN tags->'emergency' IS NOT NULL then tags->'emergency' ELSE NULL END,
             'healthcare_' || CASE WHEN tags->'healthcare' IN ('clinic', 'hospital') THEN tags->'healthcare' ELSE NULL END,
@@ -741,7 +741,7 @@ Layer:
         FROM planet_osm_point
         WHERE
           tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site')
-          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point')
+          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel')
           OR tags->'compressed_air'='yes'
           OR tags->'car_wash'='yes'
           OR (amenity='motorcycle_parking' AND (bicycle='yes' OR bicycle='designated'))
@@ -835,7 +835,7 @@ Layer:
             name,
             COALESCE( -- order is important here
               'tourism_' || CASE WHEN tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site') THEN tourism ELSE NULL END,
-              'amenity_' || CASE WHEN amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point') THEN amenity ELSE NULL END,
+              'amenity_' || CASE WHEN amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel') THEN amenity ELSE NULL END,
               'shop_' || CASE WHEN tags->'service:bicycle:retail'='yes' OR tags->'service:bicycle:repair'='yes' OR tags->'service:bicycle:rental'='yes' OR tags->'service:bicycle:pump'='yes' OR tags->'service:bicycle:diy'='yes' THEN 'bicycle' ELSE CASE WHEN shop IN ('bicycle', 'bakery', 'beverage', 'convenience', 'convenience;gas', 'greengrocer', 'supermarket', 'pastry', 'sports') THEN shop ELSE NULL END END,
               'emergency_' || CASE WHEN tags->'emergency' IS NOT NULL then tags->'emergency' ELSE NULL END,
               'healthcare_' || CASE WHEN tags->'healthcare' IN ('clinic', 'hospital') THEN tags->'healthcare' ELSE NULL END,
@@ -893,7 +893,7 @@ Layer:
           FROM planet_osm_polygon
           WHERE
             tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site')
-            OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point')
+            OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel')
             OR tags->'compressed_air'='yes'
             OR tags->'car_wash'='yes'
             OR (amenity='motorcycle_parking' AND (bicycle='yes' OR bicycle='designated'))
