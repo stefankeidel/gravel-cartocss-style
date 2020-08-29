@@ -144,7 +144,7 @@
     marker-clip: false;
   }
 
-  [feature = 'amenity_public_bath'][zoom >= 17] {
+  [feature = 'amenity_public_bath'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/amenity/public_bath.svg');
     marker-fill: @amenity-common;
     marker-placement: interior;
@@ -163,13 +163,7 @@
       }
     }
     ::nozzle {
-      [zoom = 17] {
-        nozzle/marker-fill: @marina-text;
-        nozzle/marker-line-width: 0;
-        nozzle/marker-width: 3;
-        nozzle/marker-height: 3;
-      }
-      [zoom >= 18] {
+      [zoom >= 10] {
         nozzle/marker-file: url('symbols/openstreetmap-carto/amenity/fountain.svg');
         nozzle/marker-fill: @marina-text;
         nozzle/marker-placement: interior;
@@ -192,7 +186,7 @@
     marker-clip: false;
   }
 
-  [feature = 'amenity_bicycle_repair_station'][zoom >= 15] {
+  [feature = 'amenity_bicycle_repair_station'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/amenity/bicycle_repair_station.svg');
     marker-fill: @bicycle-amenity;
     marker-placement: interior;
@@ -306,7 +300,7 @@
       marker-clip: false;
   }
 
-  [feature = 'amenity_shower'][zoom >= 18] {
+  [feature = 'amenity_shower'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/amenity/shower.svg');
     marker-fill: @amenity-common;
     marker-placement: interior;
@@ -524,7 +518,7 @@
     marker-clip: false;
   }
 
-  [feature = 'tourism_picnic_site'][zoom >= 16] {
+  [feature = 'tourism_picnic_site'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/tourism/picnic.svg');
     marker-fill: @leisure-green;
     marker-placement: interior;
@@ -534,7 +528,7 @@
     }
   }
 
-  [feature = 'leisure_picnic_table'][zoom >= 17] {
+  [feature = 'leisure_picnic_table'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/tourism/picnic.svg');
     marker-fill: @man-made-icon;
     marker-placement: interior;
@@ -600,7 +594,7 @@
     marker-clip: false;
   }
 
-  [feature = 'natural_spring'][zoom >= 16] {
+  [feature = 'natural_spring'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/spring.svg');
     marker-clip: false;
   }
@@ -642,7 +636,7 @@
     marker-clip: false;
   }
 
-  [feature = 'shop_bicycle'][zoom >= 14] {
+  [feature = 'shop_bicycle'][zoom >= 10] {
     [zoom <=15] { marker-transform: "scale(0.66)"; }
     marker-file: url('symbols/osm-bright-gl-style/amenities/bicycle_11.svg');
     marker-placement: interior;
@@ -650,30 +644,30 @@
     marker-fill: @bicycle-amenity;
   }
 
-  [feature = 'shop_sports'][zoom >= 17] {
+  [feature = 'shop_sports'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/shop/sports.svg');
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @amenity-common;
   }
 
-  [feature = 'amenity_drinking_water'][zoom >= 16],
-  [feature = 'amenity_water_point']['drinking_water'='yes'][zoom >= 16],
-  [feature = 'man_made_water_tap']['drinking_water'='yes'][zoom >= 16] {
+  [feature = 'amenity_drinking_water'][zoom >= 10],
+  [feature = 'amenity_water_point']['drinking_water'='yes'][zoom >= 10],
+  [feature = 'man_made_water_tap']['drinking_water'='yes'][zoom >= 10] {
     marker-file: url('symbols/osm-bright-gl-style/amenities/drinking_water_11.svg');
     marker-fill: @amenity-water;
   }
-  [feature = 'amenity_toilets'][zoom >= 16] {
+  [feature = 'amenity_toilets'][zoom >= 10] {
     marker-file: url('symbols/osm-bright-gl-style/amenities/toilets_11.svg');
     marker-fill: @amenity-water;
   }
 
-  [feature = 'shop_supermarket'][zoom >= 16] {
+  [feature = 'shop_supermarket'][zoom >= 10] {
     marker-placement: interior;
     marker-clip: false;
-		marker-fill: @shop-icon;
-		marker-file: url('symbols/openstreetmap-carto/shop/supermarket.svg');
-	}
+    marker-fill: @shop-icon;
+    marker-file: url('symbols/openstreetmap-carto/shop/supermarket.svg');
+  }
 
   [feature = 'amenity_bar'][zoom >= 17],
   [feature = 'amenity_biergarten'][zoom >= 17],
@@ -734,23 +728,23 @@
     [feature = 'amenity_pub'][zoom >= 16] {
       marker-file: url('symbols/osm-bright-gl-style/amenities/pub_11.svg');
     }
-    [feature = 'shop_bakery'][zoom >= 16] {
+    [feature = 'shop_bakery'][zoom >= 10] {
       marker-file: url('symbols/openstreetmap-carto/shop/bakery.svg');
     }
-    [feature = 'shop_convenience'][zoom >= 16],
-    [feature = 'shop_convenience;gas'][zoom >= 16] {
+    [feature = 'shop_convenience'][zoom >= 10],
+    [feature = 'shop_convenience;gas'][zoom >= 10] {
       marker-file: url('symbols/openstreetmap-carto/shop/convenience.svg');
     }
-    [feature = 'shop_convenience;gas'][compressed_air = 'yes'][zoom >= 16] {
+    [feature = 'shop_convenience;gas'][compressed_air = 'yes'][zoom >= 10] {
       marker-file: url('symbols/shop/convenience_air.svg');
     }
-    [feature = 'shop_greengrocer'][zoom >= 16] {
+    [feature = 'shop_greengrocer'][zoom >= 10] {
       marker-file: url('symbols/openstreetmap-carto/shop/greengrocer.svg');
     }
-    [feature = 'shop_pastry'][zoom >= 16] {
+    [feature = 'shop_pastry'][zoom >= 10] {
       marker-file: url('symbols/openstreetmap-carto/shop/confectionery.svg');
     }
-    [feature = 'shop_beverages'][zoom >= 16] {
+    [feature = 'shop_beverages'][zoom >= 10] {
       marker-file: url('symbols/openstreetmap-carto/shop/beverages.svg');
     }
   }
@@ -850,16 +844,16 @@
     marker-clip: false;
   }
 
-  [feature = 'amenity_pharmacy'][zoom >= 16] {
+  [feature = 'amenity_pharmacy'][zoom >= 10] {
     marker-file: url('symbols/openstreetmap-carto/amenity/pharmacy.svg');
     marker-fill: @health-color;
     marker-placement: interior;
     marker-clip: false;
   }
 
-  [feature = 'amenity_hospital'][zoom >= 15],
-  [feature = 'healthcare_clinic'][zoom >= 15],
-  [feature = 'healthcare_hospital'][zoom >= 15] {
+  [feature = 'amenity_hospital'][zoom >= 10],
+  [feature = 'healthcare_clinic'][zoom >= 10],
+  [feature = 'healthcare_hospital'][zoom >= 10] {
     marker-file: url('symbols/osm-bright-gl-style/amenities/hospital_11.svg');
   }
 
