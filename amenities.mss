@@ -618,6 +618,13 @@
     marker-clip: false;
   }
 
+  [feature = 'landuse_cemetery'][zoom >= 10] {
+    marker-file: url('symbols/landuse/cemetery.svg');
+    marker-fill: @man-made-icon;
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
   [feature = 'power_generator']['generator:source' = 'wind'] {
     [zoom >= 15][location != 'rooftop'][location != 'roof'],
     [zoom >= 15][location = null],

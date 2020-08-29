@@ -555,7 +555,8 @@ Layer:
             'historic_' || CASE WHEN historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate') THEN historic ELSE NULL END,
             'military_'|| CASE WHEN military IN ('bunker') THEN military ELSE NULL END,
             'highway_'|| CASE WHEN highway IN ('bus_stop', 'elevator', 'traffic_signals') THEN highway ELSE NULL END,
-            'power_' || power
+            'power_' || power,
+            'landuse_' || CASE WHEN landuse IN ('cemetery') THEN landuse ELSE NULL END
           ) AS feature,
           CASE
             WHEN tags->'capacity'~E'^\\d+$' THEN (tags->'capacity')::integer
@@ -624,6 +625,7 @@ Layer:
           OR highway IN ('elevator', 'traffic_signals')
           OR (highway='bus_stop' AND (tags->'shelter'='yes' OR covered='yes'))
           OR (power = 'generator' AND "generator:source"='wind')
+          OR (landuse = 'cemetery')
         ORDER BY
             CASE
                 -- Emergency first
@@ -844,7 +846,8 @@ Layer:
               'historic_' || CASE WHEN historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate') THEN historic ELSE NULL END,
               'military_'|| CASE WHEN military IN ('bunker') THEN military ELSE NULL END,
               'highway_'|| CASE WHEN highway IN ('bus_stop', 'elevator', 'traffic_signals') THEN highway ELSE NULL END,
-              'power_' || power
+              'power_' || power,
+              'landuse_' || CASE WHEN landuse IN ('cemetery') THEN landuse ELSE NULL END
             ) AS feature,
             CASE
               WHEN tags->'capacity'~E'^\\d+$' THEN (tags->'capacity')::integer
@@ -913,6 +916,7 @@ Layer:
             OR highway IN ('elevator', 'traffic_signals')
             OR (highway='bus_stop' AND (tags->'shelter'='yes' OR covered='yes'))
             OR (power = 'generator' AND "generator:source"='wind')
+            OR (landuse = 'cemetery')
           ORDER BY
             CASE
                 -- Emergency first
