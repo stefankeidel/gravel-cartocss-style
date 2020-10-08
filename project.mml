@@ -602,29 +602,29 @@ Layer:
         FROM planet_osm_polygon
         WHERE
           tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site')
-          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel')
+          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel')
           OR tags->'compressed_air'='yes'
           OR tags->'car_wash'='yes'
           OR (amenity='motorcycle_parking' AND (bicycle='yes' OR bicycle='designated'))
           OR (amenity='charging_station' AND (bicycle='yes' OR bicycle='designated'))
           OR (amenity='vending_machine' AND tags->'vending'='bicycle_tube')
-          OR tags->'healthcare' IN ('clinic', 'hospital')
+          --OR tags->'healthcare' IN ('clinic', 'hospital')
           OR shop IN ('bicycle', 'bakery', 'beverage', 'convenience', 'convenience;gas', 'greengrocer', 'supermarket', 'pastry', 'sports')
           OR leisure='picnic_table'
-          OR (
-            man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'cross', 'obelisk', 'communications_tower', 'telescope', 'chimney', 'crane', 'storage_tank', 'silo')
-            AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)
-          )
+          --OR (
+          --  man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'cross', 'obelisk', 'communications_tower', 'telescope', 'chimney', 'crane', 'storage_tank', 'silo')
+          --  AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)
+          --)
           OR man_made IN ('water_tap')
           OR man_made IN ('monitoring_station') AND tags->'monitoring:bicycle'='yes'
-          OR "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'cave_entrance')
-          OR waterway IN ('waterfall')
-          OR historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate')
-          OR military IN ('bunker')
-          OR tags->'emergency'='phone'
-          OR highway IN ('elevator', 'traffic_signals')
+          --OR "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'cave_entrance')
+          --OR waterway IN ('waterfall')
+          --OR historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate')
+          --OR military IN ('bunker')
+          --OR tags->'emergency'='phone'
+          --OR highway IN ('elevator', 'traffic_signals')
           OR (highway='bus_stop' AND (tags->'shelter'='yes' OR covered='yes'))
-          OR (power = 'generator' AND "generator:source"='wind')
+          --OR (power = 'generator' AND "generator:source"='wind')
           OR (landuse = 'cemetery')
         ORDER BY
             CASE
@@ -741,29 +741,29 @@ Layer:
         FROM planet_osm_point
         WHERE
           tourism IN ('alpine_hut', 'camp_site', 'caravan_site', 'wilderness_hut', 'picnic_site')
-          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'hospital', 'pharmacy', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel')
+          OR amenity IN ('bicycle_repair_station', 'compressed_air', 'drinking_water', 'fountain', 'public_bath', 'shelter', 'shower', 'toilets', 'water_point', 'fuel')
           OR tags->'compressed_air'='yes'
           OR tags->'car_wash'='yes'
           OR (amenity='motorcycle_parking' AND (bicycle='yes' OR bicycle='designated'))
           OR (amenity='charging_station' AND (bicycle='yes' OR bicycle='designated'))
           OR (amenity='vending_machine' AND tags->'vending'='bicycle_tube')
-          OR tags->'healthcare' IN ('clinic', 'hospital')
+          --OR tags->'healthcare' IN ('clinic', 'hospital')
           OR shop IN ('bicycle', 'bakery', 'beverage', 'convenience', 'convenience;gas', 'greengrocer', 'supermarket', 'pastry', 'sports')
           OR leisure='picnic_table'
-          OR (
-            man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'cross', 'obelisk', 'communications_tower', 'telescope', 'chimney', 'crane', 'storage_tank', 'silo')
-            AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)
-          )
+          --OR (
+          --  man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'cross', 'obelisk', 'communications_tower', 'telescope', 'chimney', 'crane', 'storage_tank', 'silo')
+          --  AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)
+          --)
           OR man_made IN ('water_tap')
-          OR man_made IN ('monitoring_station') AND tags->'monitoring:bicycle'='yes'
+          --OR man_made IN ('monitoring_station') AND tags->'monitoring:bicycle'='yes'
           --OR "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'cave_entrance')
-          OR waterway IN ('waterfall')
-          OR historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate')
-          OR military IN ('bunker')
-          OR tags->'emergency'='phone'
-          OR highway IN ('elevator', 'traffic_signals')
+          --OR waterway IN ('waterfall')
+          --OR historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate')
+          --OR military IN ('bunker')
+          --OR tags->'emergency'='phone'
+          --OR highway IN ('elevator', 'traffic_signals')
           OR (highway='bus_stop' AND (tags->'shelter'='yes' OR covered='yes'))
-          OR (power = 'generator' AND "generator:source"='wind')
+          --OR (power = 'generator' AND "generator:source"='wind')
           OR tags->'ford' IS NOT NULL
         ORDER BY
             CASE
